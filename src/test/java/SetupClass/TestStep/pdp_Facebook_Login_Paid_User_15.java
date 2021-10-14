@@ -24,6 +24,15 @@ public class pdp_Facebook_Login_Paid_User_15 extends Set {
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		log.info("It's opening the website URL");
 		Thread.sleep(5000);
+		try {
+		WebElement logout = driver.findElement(By.xpath("//a[contains(text(),'Sign Out')]"));
+			if (logout.isEnabled()) {
+				logout.click();
+				Thread.sleep(8000);
+				driver.navigate().refresh();
+				Thread.sleep(2000);
+				catch (NoSuchElementException Ext) {
+		}
 
 		/*try {
 			driver.findElement(By.cssSelector("div.social-login-authentication-channel:nth-child(3) > div:nth-child(1) > div:nth-child(1) > a:nth-child(1)")).click();
