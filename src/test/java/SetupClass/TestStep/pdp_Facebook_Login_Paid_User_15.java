@@ -20,7 +20,7 @@ public class pdp_Facebook_Login_Paid_User_15 extends Set {
 	@Given("^user is already on Home Page old fb$")
 	public void user_is_already_on_Home_Page_old_fb() throws InterruptedException {
 		Thread.sleep(8000);
-		driver.get(AppURL);
+		//driver.get(AppURL);
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		log.info("It's opening the website URL");
 		Thread.sleep(5000);
