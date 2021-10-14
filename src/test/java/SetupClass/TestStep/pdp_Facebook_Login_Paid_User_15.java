@@ -31,6 +31,8 @@ public class pdp_Facebook_Login_Paid_User_15 extends Set {
 				Thread.sleep(8000);
 				driver.navigate().refresh();
 				Thread.sleep(2000);
+			}
+		}
 				catch (NoSuchElementException Ext) {
 		}
 
