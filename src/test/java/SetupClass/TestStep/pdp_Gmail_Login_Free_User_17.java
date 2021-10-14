@@ -42,7 +42,7 @@ public class pdp_Gmail_Login_Free_User_17 extends Set {
 
 	@Then("^User click on sign in with google button xvii$")
 	public void user_click_on_sign_in_with_google_button_xvii() throws Throwable {
-	   
+	     Thread.sleep(2000);
 		 WebElement gmail_btn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='btn btn-block btn-social btn-google social-btn']")));
 		    Thread.sleep(2000);
 		 gmail_btn.click();
