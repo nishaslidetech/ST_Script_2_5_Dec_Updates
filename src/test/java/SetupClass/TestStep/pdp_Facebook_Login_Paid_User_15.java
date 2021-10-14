@@ -38,7 +38,7 @@ public class pdp_Facebook_Login_Paid_User_15 extends Set {
 	@Then("^User click on sign in with facebook button old fb$")
 	public void user_click_on_sign_in_with_facebook_button_old_fb() throws InterruptedException  {
 		
-		//driver.get("https://www.slideteam.net/");
+		driver.get("https://www.slideteam.net/");
 		Thread.sleep(4000);
 		WebElement fb_link = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='btn btn-block btn-social btn-facebook social-btn']")));
 		Thread.sleep(2000);
