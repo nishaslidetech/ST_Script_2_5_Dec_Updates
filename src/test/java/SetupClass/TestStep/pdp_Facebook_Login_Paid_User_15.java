@@ -59,12 +59,12 @@ public class pdp_Facebook_Login_Paid_User_15 extends Set {
 
 	    WebElement fb_email = wait.until(ExpectedConditions.elementToBeClickable(By.id("email")));
 		Thread.sleep(2000);
-	    fb_email.sendKeys("nishadhiman0027@gmail.com");
+	    fb_email.sendKeys("parulpahwa309@gmail.com");
 		Thread.sleep(2000);
 
 	    WebElement fb_pass = wait.until(ExpectedConditions.elementToBeClickable(By.id("pass")));
 		Thread.sleep(2000);
-	    fb_pass.sendKeys("Qwerty@1");
+	    fb_pass.sendKeys("parulpahwa@12");
 		Thread.sleep(2000);
 
 	    
