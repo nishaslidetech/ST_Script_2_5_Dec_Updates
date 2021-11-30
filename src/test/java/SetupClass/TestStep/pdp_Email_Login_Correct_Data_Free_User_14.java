@@ -28,7 +28,7 @@ public class pdp_Email_Login_Correct_Data_Free_User_14 extends Set{
 	@Then("^User click on Download button to download the product xiv$")
 	public void user_click_on_Download_button_to_download_the_product_xiv() throws Throwable {
 
-		WebElement download_btn_pdp_fp = wait.until(ExpectedConditions.elementToBeClickable(By.id("clicking")));
+		WebElement download_btn_pdp_fp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='clicking']")));
 		js.executeScript("arguments[0].scrollIntoView();",download_btn_pdp_fp);	
 		Thread.sleep(2000);
 		download_btn_pdp_fp.click();
@@ -100,9 +100,15 @@ public class pdp_Email_Login_Correct_Data_Free_User_14 extends Set{
 		}*/
 		 Thread.sleep(3000);
 		 WebElement sign_out = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("body > div.page-wrapper > header > div.header.content > div.panel.wrapper > div > div > ul > li.authorization-link > a")));
-		 Thread.sleep(3000);
+		// Thread.sleep(3000);
 		 sign_out.click();
 		 Thread.sleep(3000);
+		String verifySignout = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//h3[@class='base']")))
+				.getText();
+		System.out.println("verifySignout = " + verifySignout);
+
+		Assert.assertTrue("Your are not Signout from application ", verifySignout.contentEquals("You are now logged out"));
 	}
 
 }
