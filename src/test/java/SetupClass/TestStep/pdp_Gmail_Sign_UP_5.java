@@ -7,7 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.JavascriptExecutor;
-
+import org.junit.Assert;
 import SetupClass.Set;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -30,7 +30,7 @@ public class pdp_Gmail_Sign_UP_5 extends Set{
 	@Then("^User click on Download button to download the product v$")
 	public void user_click_on_Download_button_to_download_the_product_v() throws Throwable {
 	    
-		WebElement download_btn_pdp_fp = wait.until(ExpectedConditions.elementToBeClickable(By.id("clicking")));
+		WebElement download_btn_pdp_fp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='clicking']")));
 		js.executeScript("arguments[0].scrollIntoView();",download_btn_pdp_fp);	
 		Thread.sleep(2000);
 		download_btn_pdp_fp.click();
@@ -41,7 +41,7 @@ public class pdp_Gmail_Sign_UP_5 extends Set{
 
 	@Then("^user is redirected to sign up page v$")
 	public void user_is_redirected_to_sign_up_page_v() throws Throwable {
-	    Thread.sleep(6000);
+	    Thread.sleep(2000);
 	}
 
 	@Then("^User click on sign in with google button v$")
@@ -180,6 +180,12 @@ public class pdp_Gmail_Sign_UP_5 extends Set{
 		} catch (NoSuchElementException Ext) {
 
 		}
+		String verifySignout = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//h3[@class='base']")))
+				.getText();
+		System.out.println("verifySignout = " + verifySignout);
+
+		Assert.assertTrue("Your are not Signout from application ", verifySignout.contentEquals("YOU ARE NOW LOGGED OUT"));
 
 	}
 	   
