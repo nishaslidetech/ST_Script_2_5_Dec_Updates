@@ -284,6 +284,13 @@ try {
 		} catch (NoSuchElementException Ext) {
 
 		}
+		
+		String verifySignout = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//h3[@class='base']")))
+				.getText();
+		System.out.println("verifySignout = " + verifySignout);
+
+		Assert.assertTrue("Your are not Signout from application ", verifySignout.contentEquals("YOU are now logged out"));
 
 	}
 
