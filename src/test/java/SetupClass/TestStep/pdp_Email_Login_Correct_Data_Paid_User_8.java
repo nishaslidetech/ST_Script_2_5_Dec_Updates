@@ -10,6 +10,7 @@ import org.junit.Assert;
 import SetupClass.Set;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import org.junit.Assert;
 
 public class pdp_Email_Login_Correct_Data_Paid_User_8 extends Set {
 
@@ -72,8 +73,8 @@ public class pdp_Email_Login_Correct_Data_Paid_User_8 extends Set {
 
 	@Then("^user download the product viii$")
 	public void user_download_the_product_viii() throws Throwable {
-	    
-		WebElement download_btn_pdp_fp = wait.until(ExpectedConditions.elementToBeClickable(By.id("clicking")));
+	        driver.get("https://www.slideteam.net/puzzles-with-multiple-business-icons-flat-powerpoint-design.html");
+		WebElement download_btn_pdp_fp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='clicking']")));
 		js.executeScript("arguments[0].scrollIntoView();",download_btn_pdp_fp);	
 		Thread.sleep(2000);
 		download_btn_pdp_fp.click();
@@ -96,6 +97,13 @@ public class pdp_Email_Login_Correct_Data_Paid_User_8 extends Set {
 		} catch (NoSuchElementException Ext) {
 
 		}
+		String verifySignout = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//h3[@class='base']")))
+				.getText();
+		System.out.println("verifySignout = " + verifySignout);
+
+		Assert.assertTrue("Your are not Signout from application ", verifySignout.contentEquals("YOU ARE NOW LOGGED OUT"));
+		
 		
 	}
 }
