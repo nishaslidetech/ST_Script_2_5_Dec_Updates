@@ -8,7 +8,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = {"."},//tags= {"@5.3_PDP_Facebook_Login_Free_User_15"},
+@CucumberOptions(features = {"."},tags= {"@1.0_PDP_Email_Sign_UP_Incorrect_Data_1"},
 plugin= {"pretty","html:target/site/cucumber-pretty","json:target/cucumber/cucumber.json","usage:target/usage.jsonx","junit:target/cucumber.xml"})
 
 
