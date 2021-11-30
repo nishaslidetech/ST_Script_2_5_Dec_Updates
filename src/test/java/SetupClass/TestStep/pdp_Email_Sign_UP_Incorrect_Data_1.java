@@ -228,13 +228,13 @@ public class pdp_Email_Sign_UP_Incorrect_Data_1 extends Set {
 	public void user_delete_the_account_i() throws Throwable {
 	 
 
-		 driver.findElement(By.cssSelector("ul.header > li:nth-child(1) > a:nth-child(1)")).click();
+		 /*driver.findElement(By.cssSelector("ul.header > li:nth-child(1) > a:nth-child(1)")).click();
 		 Thread.sleep(3000);
 		 
 		
 
 
-/*try {
+try {
 			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
 			if(iframe.isDisplayed()) {
 				driver.switchTo().frame(iframe);   
