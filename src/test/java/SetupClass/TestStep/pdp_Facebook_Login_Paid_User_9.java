@@ -26,7 +26,7 @@ public class pdp_Facebook_Login_Paid_User_9 extends Set {
 	@Then("^User click on Download button to download the product ix$")
 	public void user_click_on_Download_button_to_download_the_product_ix() throws Throwable {
 	    
-		WebElement download_btn_pdp_fp = wait.until(ExpectedConditions.elementToBeClickable(By.id("clicking")));
+		WebElement download_btn_pdp_fp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='clicking']")));
 		js.executeScript("arguments[0].scrollIntoView();",download_btn_pdp_fp);
 		Thread.sleep(2000);
 		download_btn_pdp_fp.click();
