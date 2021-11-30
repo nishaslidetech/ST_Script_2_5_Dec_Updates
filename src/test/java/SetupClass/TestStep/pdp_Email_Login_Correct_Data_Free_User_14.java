@@ -19,7 +19,9 @@ public class pdp_Email_Login_Correct_Data_Free_User_14 extends Set{
 	
 	@Given("^user is already on PDP Page MD xiv$")
 	public void user_is_already_on_PDP_Page_MD_xiv() throws Throwable {
-		
+		Thread.sleep(1000);
+		driver.manage().deleteAllCookies();
+		Thread.sleep(2000);
 		driver.get("https://www.slideteam.net/social-media-icons-powerpoint-presentation-slides.html");
 		Thread.sleep(3000);
 	    
