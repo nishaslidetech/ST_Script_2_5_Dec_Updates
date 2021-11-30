@@ -110,7 +110,7 @@ public class pdp_Email_Login_Correct_Data_Free_User_14 extends Set{
 				.getText();
 		System.out.println("verifySignout = " + verifySignout);
 
-		Assert.assertTrue("Your are not Signout from application ", verifySignout.contentEquals("You are now logged out"));
+		Assert.assertTrue("Your are not Signout from application ", verifySignout.contentEquals("YOU ARE NOW LOGGED OUT"));
 	}
 
 }
