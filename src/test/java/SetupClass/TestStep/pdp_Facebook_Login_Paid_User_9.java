@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.JavascriptExecutor;
-
+import org.junit.Assert;
 import SetupClass.Set;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -41,19 +41,19 @@ public class pdp_Facebook_Login_Paid_User_9 extends Set {
 	@Then("^User click on sign in with facebook button ix$")
 	public void user_click_on_sign_in_with_facebook_button_ix() throws Throwable {
 
-		driver.findElement(By.xpath("//a[contains(text(),'Sign in with Facebook')]")).click();
+		driver.findElement(By.xpath("//a[@class='btn btn-block btn-social btn-facebook social-btn']")).click();
 		Thread.sleep(2000);
 		log.info("It's opening the website URL");
 		
-		 WebElement fb_email = wait.until(ExpectedConditions.elementToBeClickable(By.id("email")));
+		 WebElement fb_email = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='email']")));
 		 Thread.sleep(2000);
 		    fb_email.sendKeys("sumit.kumar@slidetech.in");
 		    Thread.sleep(2000);
-		    WebElement fb_pass = wait.until(ExpectedConditions.elementToBeClickable(By.id("pass")));
+		    WebElement fb_pass = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//fieldset[@class='fieldset login']//input[@id='pass']")));
 		    Thread.sleep(2000);
 		    fb_pass.sendKeys("redhat2090");
 		    Thread.sleep(2000);
-		    WebElement fb_login_btn=wait.until(ExpectedConditions.elementToBeClickable(By.id("loginbutton")));
+		    WebElement fb_login_btn=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//fieldset[@class='fieldset login']//button[@id='send2']")));
 		    Thread.sleep(2000);
 		    fb_login_btn.click();
 		    Thread.sleep(2000);
@@ -94,7 +94,12 @@ public class pdp_Facebook_Login_Paid_User_9 extends Set {
 		} catch (NoSuchElementException Ext) {
 
 		}
-		
+		String verifySignout = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//h3[@class='base']")))
+				.getText();
+		System.out.println("verifySignout = " + verifySignout);
+
+		Assert.assertTrue("Your are not Signout from application ", verifySignout.contentEquals("YOU ARE NOW LOGGED OUT"));
 	}
 
 	
