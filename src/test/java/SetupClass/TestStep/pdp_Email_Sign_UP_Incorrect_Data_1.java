@@ -290,7 +290,7 @@ try {
 				.getText();
 		System.out.println("verifySignout = " + verifySignout);
 
-		Assert.assertTrue("Your are not Signout from application ", verifySignout.contentEquals("YOU are now logged out"));
+		Assert.assertTrue("Your are not Signout from application ", verifySignout.contentEquals("You are now logged out"));
 
 	}
 
