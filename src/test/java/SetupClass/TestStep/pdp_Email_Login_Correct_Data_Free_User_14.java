@@ -45,18 +45,18 @@ public class pdp_Email_Login_Correct_Data_Free_User_14 extends Set{
 
 	@Then("^user login with correct details xiv$")
 	public void user_login_with_correct_details_xiv() throws Throwable {
-		WebElement username = wait.until(ExpectedConditions.elementToBeClickable(By.id("email")));
-		Thread.sleep(2000);
+		WebElement username = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='email']")));
+		//Thread.sleep(2000);
 		username.sendKeys("slideteam.qa@yahoo.com");
 		Thread.sleep(2000);
 		
-		WebElement password = wait.until(ExpectedConditions.elementToBeClickable(By.id("pass")));
-		Thread.sleep(2000);
+		WebElement password = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//fieldset[@class='fieldset login']//input[@id='pass']")));
+		//Thread.sleep(2000);
 		password.sendKeys("123456");
 		Thread.sleep(2000);
 		
-		WebElement login_btn = wait.until(ExpectedConditions.elementToBeClickable(By.id("send2")));
-		Thread.sleep(2000);
+		WebElement login_btn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//fieldset[@class='fieldset login']//button[@id='send2']")));
+		//Thread.sleep(2000);
 		login_btn.click();
 		Thread.sleep(2000);
 	   
@@ -66,7 +66,7 @@ public class pdp_Email_Login_Correct_Data_Free_User_14 extends Set{
 	public void user_is_reedirected_to_same_pdp_page_and_download_the_product_xiv() throws Throwable {
 		
 		driver.get("https://www.slideteam.net/customer-relationship-management-free-powerpoint-templates-slides.html");
-		WebElement download_btn_pdp_fp = wait.until(ExpectedConditions.elementToBeClickable(By.id("clicking")));
+		WebElement download_btn_pdp_fp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='clicking']")));
 		js.executeScript("arguments[0].scrollIntoView();",download_btn_pdp_fp);	
 		Thread.sleep(2000);
 		download_btn_pdp_fp.click();
