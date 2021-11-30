@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import org.junit.Assert;
 import SetupClass.Set;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -19,6 +19,8 @@ public class pdp_Email_Login_Incorrect_Data_Paid_User_7 extends Set{
 
 	@Given("^user is already on PDP Page MD vii$")
 	public void user_is_already_on_PDP_Page_MD_vii() throws Throwable {
+		Thread.sleep(1000);
+		driver.manage().deleteAllCookies();
 		driver.get("https://www.slideteam.net/slides-for-a-startup-pitch-deck-powerpoint-presentation-slides.html");
 		Thread.sleep(2000);
 	    
@@ -43,17 +45,17 @@ public class pdp_Email_Login_Incorrect_Data_Paid_User_7 extends Set{
 	@Then("^user enter incorrect details to login vii$")
 	public void user_enter_incorrect_details_to_login_vii() throws Throwable {
 	   
-		WebElement username = wait.until(ExpectedConditions.elementToBeClickable(By.id("email")));
+		WebElement username = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='email']")));
 		Thread.sleep(2000);
 		username.sendKeys("*&#@Y #RHFGHJEGFYUJEh");
 		Thread.sleep(2000);
 		
-		WebElement password = wait.until(ExpectedConditions.elementToBeClickable(By.id("pass")));
+		WebElement password = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//fieldset[@class='fieldset login']//input[@id='pass']")));
 		Thread.sleep(2000);
 		password.sendKeys("jhjhddhjdhdfhfhfh");
 		Thread.sleep(2000);
 		
-		WebElement login_btn = wait.until(ExpectedConditions.elementToBeClickable(By.id("send2")));
+		WebElement login_btn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//fieldset[@class='fieldset login']//button[@id='send2']")));
 		Thread.sleep(2000);
 		login_btn.click();
 		Thread.sleep(2000);
@@ -63,12 +65,12 @@ public class pdp_Email_Login_Incorrect_Data_Paid_User_7 extends Set{
 	@Then("^error message is displayed vii$")
 	public void error_message_is_displayed_vii() throws Throwable {
 	   
-		WebElement username = wait.until(ExpectedConditions.elementToBeClickable(By.id("email")));
+		WebElement username = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='email']")));
 		Thread.sleep(2000);
 		username.clear();
 		Thread.sleep(2000);
 		
-		WebElement password = wait.until(ExpectedConditions.elementToBeClickable(By.id("pass")));
+		WebElement password = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//fieldset[@class='fieldset login']//input[@id='pass']")));
 		Thread.sleep(2000);
 		password.clear();
 		Thread.sleep(2000);
@@ -79,17 +81,17 @@ public class pdp_Email_Login_Incorrect_Data_Paid_User_7 extends Set{
 	@Then("^user login with correct details vii$")
 	public void user_login_with_correct_details_vii() throws Throwable {
 	    
-		WebElement username = wait.until(ExpectedConditions.elementToBeClickable(By.id("email")));
+		WebElement username = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='email']")));
 		Thread.sleep(2000);
 		username.sendKeys("sumit@slideteam.net");
 		Thread.sleep(2000);
 		
-		WebElement password = wait.until(ExpectedConditions.elementToBeClickable(By.id("pass")));
+		WebElement password = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//fieldset[@class='fieldset login']//input[@id='pass']")));
 		Thread.sleep(2000);
 		password.sendKeys("sumittest@21234");
 		Thread.sleep(2000);
 		
-		WebElement login_btn = wait.until(ExpectedConditions.elementToBeClickable(By.id("send2")));
+		WebElement login_btn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//fieldset[@class='fieldset login']//button[@id='send2']")));
 		Thread.sleep(2000);
 		login_btn.click();
 		Thread.sleep(2000);
@@ -133,6 +135,12 @@ public class pdp_Email_Login_Incorrect_Data_Paid_User_7 extends Set{
 		} catch (NoSuchElementException Ext) {
 
 		}
+		String verifySignout = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//h3[@class='base']")))
+				.getText();
+		System.out.println("verifySignout = " + verifySignout);
+
+		Assert.assertTrue("Your are not Signout from application ", verifySignout.contentEquals("YOU ARE NOW LOGGED OUT"));
 		
 	}
 
