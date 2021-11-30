@@ -18,8 +18,9 @@ public class pdp_Email_Login_Correct_Data_Paid_User_8 extends Set {
 	
 	@Given("^user is already on PDP Page MD viii$")
 	public void user_is_already_on_PDP_Page_MD_viii() throws Throwable {
-		
+		Thread.sleep(2000);
 		driver.manage().deleteAllCookies();
+		Thread.sleep(2000);
 		driver.get("https://www.slideteam.net/puzzles-with-multiple-business-icons-flat-powerpoint-design.html");
 		Thread.sleep(2000);
 	    
@@ -28,7 +29,7 @@ public class pdp_Email_Login_Correct_Data_Paid_User_8 extends Set {
 	@Then("^User click on Download button to download the product viii$")
 	public void user_click_on_Download_button_to_download_the_product_viii() throws Throwable {
 	    
-		WebElement download_btn_pdp_fp = wait.until(ExpectedConditions.elementToBeClickable(By.id("clicking")));
+		WebElement download_btn_pdp_fp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='clicking']")));
 		js.executeScript("arguments[0].scrollIntoView();",download_btn_pdp_fp);	
 		Thread.sleep(2000);
 		download_btn_pdp_fp.click();
@@ -46,17 +47,17 @@ public class pdp_Email_Login_Correct_Data_Paid_User_8 extends Set {
 
 	@Then("^user login with correct details viii$")
 	public void user_login_with_correct_details_viii() throws Throwable {
-		WebElement username = wait.until(ExpectedConditions.elementToBeClickable(By.id("email")));
+		WebElement username = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='email']")));
 		Thread.sleep(2000);
 		username.sendKeys("sumit@slideteam.net");
 		Thread.sleep(2000);
 		
-		WebElement password = wait.until(ExpectedConditions.elementToBeClickable(By.id("pass")));
+		WebElement password = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//fieldset[@class='fieldset login']//input[@id='pass']")));
 		Thread.sleep(2000);
 		password.sendKeys("sumittest@21234");
 		Thread.sleep(2000);
 		
-		WebElement login_btn = wait.until(ExpectedConditions.elementToBeClickable(By.id("send2")));
+		WebElement login_btn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='Login']")));
 		Thread.sleep(2000);
 		login_btn.click();
 		Thread.sleep(2000);
