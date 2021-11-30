@@ -23,7 +23,8 @@ public class pdp_Email_Sign_UP_Incorrect_Data_1 extends Set {
 	
 	@Given("^user is already on PDP Page FP i$")
 	public void user_is_already_on_PDP_Page_FP_i() throws Throwable {
-	   
+	         driver.manage().deleteAllCookies();
+		Thread.sleep(2000);
 		driver.get("https://www.slideteam.net/technology-powerpoint-templates/private-public-cloud-computing/0115-big-data-icon-set-data-analytics-icon-set-cloud-computing-networking-funnel-ppt-slide.html");
 		Thread.sleep(2000);
 	    
