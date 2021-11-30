@@ -19,6 +19,7 @@ public class pdp_Email_Login_Correct_Data_Paid_User_8 extends Set {
 	@Given("^user is already on PDP Page MD viii$")
 	public void user_is_already_on_PDP_Page_MD_viii() throws Throwable {
 		
+		driver.manage().deleteAllCookies();
 		driver.get("https://www.slideteam.net/puzzles-with-multiple-business-icons-flat-powerpoint-design.html");
 		Thread.sleep(2000);
 	    
