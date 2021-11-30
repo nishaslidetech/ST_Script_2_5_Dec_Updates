@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.JavascriptExecutor;
-
+import org.junit.Assert;
 import SetupClass.Set;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
@@ -19,6 +19,9 @@ public class pdp_Gmail_Login_Paid_User_11 extends Set {
 	
 	@Given("^user is already on pdp page CD xi$")
 	public void user_is_already_on_pdp_page_CD_xi() throws Throwable {
+		Thread.sleep(1000);
+		driver.manage().deleteAllCookies();
+		Thread.sleep(2000);
 	    // Write code here that turns the phrase above into concrete actions
 		driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/change-management-powerpoint-presentation-slides.html");
 		Thread.sleep(1000);
@@ -124,6 +127,12 @@ public class pdp_Gmail_Login_Paid_User_11 extends Set {
 
 		}
 		 Thread.sleep(2000);
+		String verifySignout = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//h3[@class='base']")))
+				.getText();
+		System.out.println("verifySignout = " + verifySignout);
+
+		Assert.assertTrue("Your are not Signout from application ", verifySignout.contentEquals("YOU ARE NOW LOGGED OUT"));
 
 	}
 
