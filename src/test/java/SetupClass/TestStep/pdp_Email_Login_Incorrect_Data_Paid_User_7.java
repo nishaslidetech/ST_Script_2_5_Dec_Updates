@@ -108,7 +108,8 @@ public class pdp_Email_Login_Incorrect_Data_Paid_User_7 extends Set{
 
 	@Then("^user download the product vii$")
 	public void user_download_the_product_vii() throws Throwable {
-	   
+		
+	       driver.get("https://www.slideteam.net/slides-for-a-startup-pitch-deck-powerpoint-presentation-slides.html");
 		   
 		WebElement download_btn_pdp_fp = wait.until(ExpectedConditions.elementToBeClickable(By.id("clicking")));
 		Thread.sleep(2000);
