@@ -47,7 +47,7 @@ public class pdp_Email_Sign_UP_Incorrect_Data_1 extends Set {
 	   
 	try
 	{
-		WebElement sign_up_page = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[contains(.,'Create an Account')])[1]")));
+		WebElement sign_up_page = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='signupclass']")));
 		Thread.sleep(2000);
 		sign_up_page.click();
 		Thread.sleep(2000);
