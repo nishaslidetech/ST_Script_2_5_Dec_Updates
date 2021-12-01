@@ -43,7 +43,9 @@ public class pdp_Email_Login_Correct_Data_Paid_User_8 extends Set {
 
 	@Then("^user is redirected to Login page viii$")
 	public void user_is_redirected_to_Login_page_viii() throws Throwable {
-	   Thread.sleep(3000);
+	   Thread.sleep(2000);
+              driver.get("https://www.slideteam.net/customer/account/login/");
+		Thread.sleep(2000);
 	}
 
 	@Then("^user login with correct details viii$")
