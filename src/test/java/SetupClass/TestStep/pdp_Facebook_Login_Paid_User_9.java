@@ -49,11 +49,11 @@ public class pdp_Facebook_Login_Paid_User_9 extends Set {
 		 Thread.sleep(2000);
 		    fb_email.sendKeys("sumit.kumar@slidetech.in");
 		    Thread.sleep(2000);
-		    WebElement fb_pass = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//fieldset[@class='fieldset login']//input[@id='pass']")));
+		    WebElement fb_pass = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='pass']")));
 		    Thread.sleep(2000);
 		    fb_pass.sendKeys("redhat2090");
 		    Thread.sleep(2000);
-		    WebElement fb_login_btn=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//fieldset[@class='fieldset login']//button[@id='send2']")));
+		    WebElement fb_login_btn=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='loginbutton']")));
 		    Thread.sleep(2000);
 		    fb_login_btn.click();
 		    Thread.sleep(2000);
