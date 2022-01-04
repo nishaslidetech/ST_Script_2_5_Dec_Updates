@@ -53,10 +53,21 @@ public class pdp_Facebook_Login_Paid_User_9 extends Set {
 		    Thread.sleep(2000);
 		    fb_pass.sendKeys("redhat2090");
 		    Thread.sleep(2000);
-		    WebElement fb_login_btn=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='loginbutton']")));
-		    Thread.sleep(2000);
-		    fb_login_btn.click();
-		    Thread.sleep(2000);
+		   try {
+			if (!driver.findElements(By.xpath("//input[@value='Log In']")).isEmpty()) {
+				driver.findElement(By.xpath("//input[@value='Log In']")).click();
+			}
+			else {
+			WebElement fb_login = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='loginbutton']")));
+			
+			
+			fb_login.click();
+			Thread.sleep(3000);
+			}
+		} catch (NoSuchElementException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	/*WebElement privacy =wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#platformDialogForm > div._5lnf.uiOverlayFooter._5a8u > table > tbody > tr > td._51m-.prs.uiOverlayFooterMessage > table > tbody > tr > td._51m-.uiOverlayFooterButtons._51mw > button._42ft._4jy0.layerConfirm._51_n.autofocus._4jy5._4jy1.selected._51sy")));
                 Thread.sleep(3000);
