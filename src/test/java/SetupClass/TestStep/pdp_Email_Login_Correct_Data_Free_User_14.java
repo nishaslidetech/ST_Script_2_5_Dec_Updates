@@ -49,12 +49,12 @@ public class pdp_Email_Login_Correct_Data_Free_User_14 extends Set{
 	public void user_login_with_correct_details_xiv() throws Throwable {
 		WebElement username = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='email']")));
 		//Thread.sleep(2000);
-		username.sendKeys("slideteam.qa@yahoo.com");
+		username.sendKeys("nishadhiman0027@gmail.com");
 		Thread.sleep(2000);
 		
 		WebElement password = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//fieldset[@class='fieldset login']//input[@id='pass']")));
 		//Thread.sleep(2000);
-		password.sendKeys("123456");
+		password.sendKeys("Qwerty@1");
 		Thread.sleep(2000);
 		
 		WebElement login_btn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//fieldset[@class='fieldset login']//button[@id='send2']")));
