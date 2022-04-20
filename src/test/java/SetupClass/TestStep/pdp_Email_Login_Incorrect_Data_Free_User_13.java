@@ -27,12 +27,16 @@ public class pdp_Email_Login_Incorrect_Data_Free_User_13 extends Set {
 	@Then("^User click on Download button to download the product xiii$")
 	public void user_click_on_Download_button_to_download_the_product_xiii() throws Throwable {
 		Thread.sleep(1000);
-		WebElement download_btn_pdp_fp = wait.until(ExpectedConditions.elementToBeClickable(By.id("clicking")));
-		js.executeScript("arguments[0].scrollIntoView();",download_btn_pdp_fp);
-		Thread.sleep(2000);
-		download_btn_pdp_fp.click();
-		
-		Thread.sleep(2000);
+		WebElement download_btn_pdp= wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='Download this presentation']")));
+		 js.executeScript("arguments[0].scrollIntoView();",download_btn_pdp);	
+	         download_btn_pdp.click();
+	         Thread.sleep(3000);
+	         WebElement registeredUsers = wait
+				.until(ExpectedConditions.elementToBeClickable(By.linkText("Registered Users")));
+	 
+	         js.executeScript("arguments[0].click();", registeredUsers);
+		 Thread.sleep(2000);
 	}
 
 	@Then("^user is redirected to Login page xiii$")
