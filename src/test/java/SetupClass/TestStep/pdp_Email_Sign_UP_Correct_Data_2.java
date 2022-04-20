@@ -31,7 +31,7 @@ public class pdp_Email_Sign_UP_Correct_Data_2 extends Set {
 	@Then("^User click on Download button to download the product ii$")
 	public void user_click_on_Download_button_to_download_the_product_ii() throws Throwable {
 		
-		WebElement download_btn_pdp = wait.until(ExpectedConditions.elementToBeClickable(By.id("clicking")));
+		WebElement download_btn_pdp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='Download this presentation']")));
 		js.executeScript("arguments[0].scrollIntoView();", download_btn_pdp);
 		Thread.sleep(2000);
 		download_btn_pdp.click();
@@ -43,10 +43,10 @@ public class pdp_Email_Sign_UP_Correct_Data_2 extends Set {
 	public void user_is_redirected_to_sign_up_page_ii() throws Throwable {
 	    
 		// move to sign up form
-		WebElement sign_up_page = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Sign up")));
+		/*+WebElement sign_up_page = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Sign up")));
 		Thread.sleep(2000);
 		sign_up_page.click();
-		Thread.sleep(2000);
+		Thread.sleep(2000);*/
 		
 	}
 
@@ -73,40 +73,42 @@ public class pdp_Email_Sign_UP_Correct_Data_2 extends Set {
 	    System.out.println(full_email);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);	
 		Thread.sleep(2000);
-	    WebElement new_email_signup = wait.until(ExpectedConditions.elementToBeClickable(By.id("email_address")));
+		WebElement new_email_signup = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@title= 'Email Address']")));
 		Thread.sleep(2000);
-	    new_email_signup.sendKeys(full_email);
+		new_email_signup.sendKeys(full_email);
 		Thread.sleep(2000);
-	   
+
+		WebElement new_fname_signup = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@title= 'First Name']")));
+		Thread.sleep(2000);
+		new_fname_signup.sendKeys("Selenium");
+		Thread.sleep(2000);
+
+		WebElement new_lname_signup = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@title= 'Last Name']")));
+		Thread.sleep(2000);
+		new_lname_signup.sendKeys("Testing");
+		Thread.sleep(2000);
+
+		WebElement new_pwd_signup = wait.until(
+				ExpectedConditions.elementToBeClickable(By.xpath("//input[@class= 'input-text popupform-pass']")));
+		Thread.sleep(2000);
+		new_pwd_signup.sendKeys("selenium@123");
+		Thread.sleep(2000);
+
+		WebElement new_captcha_signup = wait.until(ExpectedConditions
+				.elementToBeClickable(By.xpath("//input[@name= 'captcha[downloadable_ajax_loginform]']")));
+		Thread.sleep(2000);
+		new_captcha_signup.sendKeys("Aj7W2mtf9namwf55");
+
+		WebElement new_btn_signup = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@title= 'Sign UP']")));
+		Thread.sleep(2000);
+		new_btn_signup.click();
+		Thread.sleep(3000);
 		
-		 WebElement new_fname_signup = wait.until(ExpectedConditions.elementToBeClickable(By.id("firstname")));
-			Thread.sleep(2000);
-		    new_fname_signup.sendKeys("Selenium");
-			Thread.sleep(2000);
-
-		    WebElement new_lname_signup = wait.until(ExpectedConditions.elementToBeClickable(By.id("lastname")));
-			Thread.sleep(2000);
-		    new_lname_signup.sendKeys("Testing");
-			Thread.sleep(2000);
-			
-			 WebElement new_pwd_signup = wait.until(ExpectedConditions.elementToBeClickable(By.id("password")));
-				Thread.sleep(2000);
-			    new_pwd_signup.sendKeys("selenium@123");
-				Thread.sleep(2000);
-
-			    WebElement new_pwd1_signup = wait.until(ExpectedConditions.elementToBeClickable(By.id("password-confirmation")));
-				Thread.sleep(2000);
-			    new_pwd1_signup.sendKeys("selenium@123");
-				Thread.sleep(2000);
-				
-				WebElement new_captcha_signup = wait.until(ExpectedConditions.elementToBeClickable(By.id("captcha_user_create")));
-				Thread.sleep(2000);
-			    new_captcha_signup.sendKeys("Aj7W2mtf9namwf55");
-			    
-			    WebElement new_btn_signup = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".submit")));
-				Thread.sleep(2000);
-			    new_btn_signup.click();
-				Thread.sleep(2000);
+		
 			   
 	}
 
