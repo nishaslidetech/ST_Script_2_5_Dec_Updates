@@ -75,8 +75,7 @@ public class pdp_Email_Login_Incorrect_Data_Free_User_13 extends Set {
 		password.clear();
 		Thread.sleep(2000);
 	   
-		driver.navigate().refresh();
-		Thread.sleep(2000);
+		
 	}
 
 	@Then("^user login with correct details xiii$")
