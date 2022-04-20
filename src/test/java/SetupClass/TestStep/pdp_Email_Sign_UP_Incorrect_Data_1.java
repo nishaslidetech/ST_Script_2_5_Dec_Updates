@@ -151,11 +151,8 @@ public class pdp_Email_Sign_UP_Incorrect_Data_1 extends Set {
 			    String full_email="selenium.testing."+generatedString+"@gmail.com";
 			    System.out.println(full_email);
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);	
-				Thread.sleep(2000);
-			    WebElement new_email_signup = wait.until(ExpectedConditions.elementToBeClickable(By.id("email_address")));
-				Thread.sleep(2000);
-			    new_email_signup.sendKeys(full_email);
-						Thread.sleep(2000);
+			
+		Thread.sleep(2000);
 		WebElement new_email_signup = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@title= 'Email Address']")));
 		Thread.sleep(2000);
