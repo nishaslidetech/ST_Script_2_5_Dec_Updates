@@ -106,7 +106,7 @@ public class pdp_Email_Sign_UP_Correct_Data_2 extends Set {
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@title= 'Sign UP']")));
 		Thread.sleep(2000);
 		new_btn_signup.click();
-		Thread.sleep(7000);
+		Thread.sleep(4000);
 		
 		
 			   
