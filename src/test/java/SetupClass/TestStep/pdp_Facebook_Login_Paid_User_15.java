@@ -102,7 +102,7 @@ public class pdp_Facebook_Login_Paid_User_15 extends Set {
 		Thread.sleep(3000);
 		
 		
-		driver.findElement(By.cssSelector("#clicking")).click();
+		driver.findElement(By.xpath("//button[normalize-space()='Download this presentation']")).click();
 		Thread.sleep(3000);
 		
 		driver.navigate().refresh();
