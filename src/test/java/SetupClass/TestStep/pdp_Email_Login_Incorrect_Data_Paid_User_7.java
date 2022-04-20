@@ -79,7 +79,7 @@ public class pdp_Email_Login_Incorrect_Data_Paid_User_7 extends Set{
 		password.clear();
 		Thread.sleep(2000);
 		
-		driver.navigate().refresh();
+		
 	}
 
 	@Then("^user login with correct details vii$")
