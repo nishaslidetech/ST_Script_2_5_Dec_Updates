@@ -31,11 +31,15 @@ public class pdp_Facebook_Sign_UP_3 extends Set {
 	public void user_click_on_Download_button_to_download_the_product_iii() throws Throwable {
 	    
 		
-		WebElement download_btn_pdp_fp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='clicking']")));
-		js.executeScript("arguments[0].scrollIntoView();",download_btn_pdp_fp);
-		Thread.sleep(2000);
-		download_btn_pdp_fp.click();
-		Thread.sleep(2000);
+		WebElement Download = wait.until(ExpectedConditions
+				.elementToBeClickable(By.xpath("//button[normalize-space()='Download this presentation']")));
+		Download.click();
+		Thread.sleep(3000);
+		
+		WebElement Sign_in_with_facebook= wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+				"//div[@class = 'social-buttons']//a[@class='btn btn-block btn-social btn-facebook social-btn']")));
+		 js.executeScript("arguments[0].click();", Sign_in_with_facebook);
+		Thread.sleep(3000);
 		
 	}
 
@@ -48,11 +52,6 @@ public class pdp_Facebook_Sign_UP_3 extends Set {
 	public void user_click_on_sign_in_with_facebook_button_iii() throws Throwable {
 		//driver.findElement(By.xpath("//a[contains(text(),'Sign in with Facebook')]")).click();
 		
-		 WebElement fb_login_btn_home_page = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='btn btn-block btn-social btn-facebook social-btn']")));
-		 Thread.sleep(2000);
-		 fb_login_btn_home_page.click();
-		 
-		Thread.sleep(3200);
 		/*log.info("It's opening the website URL");
 		
 		 WebElement fb_email = wait.until(ExpectedConditions.elementToBeClickable(By.id("email")));
