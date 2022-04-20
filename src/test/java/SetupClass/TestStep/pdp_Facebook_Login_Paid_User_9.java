@@ -26,11 +26,15 @@ public class pdp_Facebook_Login_Paid_User_9 extends Set {
 	@Then("^User click on Download button to download the product ix$")
 	public void user_click_on_Download_button_to_download_the_product_ix() throws Throwable {
 	    
-		WebElement download_btn_pdp_fp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='clicking']")));
-		js.executeScript("arguments[0].scrollIntoView();",download_btn_pdp_fp);
-		Thread.sleep(2000);
-		download_btn_pdp_fp.click();
-		Thread.sleep(2000);
+		WebElement Download = wait.until(ExpectedConditions
+				.elementToBeClickable(By.xpath("//button[normalize-space()='Download this presentation']")));
+		Download.click();
+		Thread.sleep(3000);
+		
+		WebElement Sign_in_with_facebook= wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+				"//div[@class = 'social-buttons']//a[@class='btn btn-block btn-social btn-facebook social-btn']")));
+		 js.executeScript("arguments[0].click();", Sign_in_with_facebook);
+		Thread.sleep(3000);
 	}
 
 	@Then("^user is redirected to Login page ix$")
@@ -41,9 +45,6 @@ public class pdp_Facebook_Login_Paid_User_9 extends Set {
 	@Then("^User click on sign in with facebook button ix$")
 	public void user_click_on_sign_in_with_facebook_button_ix() throws Throwable {
 
-		driver.findElement(By.xpath("//a[@class='btn btn-block btn-social btn-facebook social-btn']")).click();
-		Thread.sleep(2000);
-		log.info("It's opening the website URL");
 		
 		 WebElement fb_email = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='email']")));
 		 Thread.sleep(2000);
