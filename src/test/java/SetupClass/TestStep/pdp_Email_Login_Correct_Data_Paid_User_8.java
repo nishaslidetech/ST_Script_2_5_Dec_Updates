@@ -29,13 +29,17 @@ public class pdp_Email_Login_Correct_Data_Paid_User_8 extends Set {
 
 	@Then("^User click on Download button to download the product viii$")
 	public void user_click_on_Download_button_to_download_the_product_viii() throws Throwable {
-	    
-		WebElement download_btn_pdp_fp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='clicking']")));
-		js.executeScript("arguments[0].scrollIntoView();",download_btn_pdp_fp);	
-		Thread.sleep(2000);
-		download_btn_pdp_fp.click();
 		
-		Thread.sleep(2000);
+	    WebElement download_btn_pdp = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='Download this presentation']")));
+		 js.executeScript("arguments[0].scrollIntoView();",download_btn_pdp);	
+	         download_btn_pdp.click();
+	         Thread.sleep(3000);
+	         WebElement registeredUsers = wait
+				.until(ExpectedConditions.elementToBeClickable(By.linkText("Registered Users")));
+	 
+	         js.executeScript("arguments[0].click();", registeredUsers);
+		 Thread.sleep(2000);
 		
 		
 		
