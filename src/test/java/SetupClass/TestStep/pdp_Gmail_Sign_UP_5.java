@@ -30,11 +30,15 @@ public class pdp_Gmail_Sign_UP_5 extends Set{
 	@Then("^User click on Download button to download the product v$")
 	public void user_click_on_Download_button_to_download_the_product_v() throws Throwable {
 	    
-		WebElement download_btn_pdp_fp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='clicking']")));
-		js.executeScript("arguments[0].scrollIntoView();",download_btn_pdp_fp);	
-		Thread.sleep(2000);
-		download_btn_pdp_fp.click();
-		Thread.sleep(2000);
+		WebElement Download = wait.until(ExpectedConditions
+				.elementToBeClickable(By.xpath("//button[normalize-space()='Download this presentation']")));
+		Download.click();
+		Thread.sleep(3000);
+	
+		WebElement Sign_in_with_google = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+				"//div[@class = 'social-buttons']//a[@class='btn btn-block btn-social btn-google social-btn']")));
+		 js.executeScript("arguments[0].click();", Sign_in_with_google);
+		Thread.sleep(3000);
 		
 		
 	}
@@ -47,9 +51,6 @@ public class pdp_Gmail_Sign_UP_5 extends Set{
 	@Then("^User click on sign in with google button v$")
 	public void user_click_on_sign_in_with_google_button_v() throws Throwable {
 		
-		 WebElement gmail_btn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='btn btn-block btn-social btn-google social-btn']")));
-		    Thread.sleep(2000);
-		 gmail_btn.click();
 		
 		 Thread.sleep(2000);
 		try
