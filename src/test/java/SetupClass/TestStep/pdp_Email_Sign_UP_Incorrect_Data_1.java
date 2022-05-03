@@ -26,7 +26,7 @@ public class pdp_Email_Sign_UP_Incorrect_Data_1 extends Set {
 	         driver.manage().deleteAllCookies();
 		Thread.sleep(2000);
 		driver.get("https://www.slideteam.net/technology-powerpoint-templates/private-public-cloud-computing/0115-big-data-icon-set-data-analytics-icon-set-cloud-computing-networking-funnel-ppt-slide.html");
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 	    
 	}
 
