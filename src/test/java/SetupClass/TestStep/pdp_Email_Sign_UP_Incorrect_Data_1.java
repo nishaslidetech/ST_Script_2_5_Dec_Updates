@@ -125,7 +125,7 @@ public class pdp_Email_Sign_UP_Incorrect_Data_1 extends Set {
 	    new_btn_signup.click();
 	    
 	    Thread.sleep(7000);
-	    driver.navigate().refresh();
+	  
 	    
 	}
 
