@@ -112,7 +112,7 @@ public class pdp_Email_Sign_UP_Incorrect_Data_1 extends Set {
 	    Thread.sleep(1000);
 	    new_lname_signup.clear();
 	    Thread.sleep(2000);
-	    WebElement new_pwd_signup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class= 'input-text popupform-pass']")));
+	    WebElement new_pwd_signup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id= 'password']")));
 	    Thread.sleep(1000);
 	    new_pwd_signup.clear();
 	    Thread.sleep(2000);
