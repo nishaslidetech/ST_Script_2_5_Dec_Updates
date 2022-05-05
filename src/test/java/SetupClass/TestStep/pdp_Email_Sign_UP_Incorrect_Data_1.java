@@ -218,8 +218,8 @@ public class pdp_Email_Sign_UP_Incorrect_Data_1 extends Set {
 		js.executeScript("arguments[0].scrollIntoView();", down_load);
 		down_load.click();
 		Thread.sleep(3000);
-	   driver.get("https://www.slideteam.net/");
-	   Thread.sleep(3000);
+	   //driver.get("https://www.slideteam.net/");
+	   //Thread.sleep(3000);
 		
 	}
 
@@ -272,7 +272,7 @@ try {
 		
 		
 	}*/
-		try {
+		/*try {
 			WebElement logout = driver.findElement(By.xpath("//a[contains(text(),'Sign Out')]"));
 			if (logout.isEnabled()) {
 				logout.click();
@@ -289,7 +289,33 @@ try {
 				.getText();
 		System.out.println("verifySignout = " + verifySignout);
 
-		Assert.assertTrue("Your are not Signout from application ", verifySignout.contentEquals("YOU ARE NOW LOGGED OUT"));
+		Assert.assertTrue("Your are not Signout from application ", verifySignout.contentEquals("YOU ARE NOW LOGGED OUT"));*/
+		
+		WebElement My_Account = wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("My Account")));
+		js.executeScript("arguments[0].click();", My_Account);
+		//My_Account.click();
+
+		// handling the chat window here
+		Set.Chat_window_handle();
+
+		WebElement Delete_Account = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Delete Account']")));
+		Thread.sleep(1000);
+		Delete_Account.click();
+		WebElement radio_button = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@value='option1']")));
+		radio_button.click();
+		Thread.sleep(1000);
+		WebElement delete_Profile = wait.until(
+				ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='Delete Profile']")));
+		js.executeScript("arguments[0].scrollIntoView();", delete_Profile);
+		delete_Profile.click();
+		Thread.sleep(1000);
+		WebElement continue_delete = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'No, delete my')]")));
+		js.executeScript("arguments[0].scrollIntoView();", continue_delete);
+		continue_delete.click();
+		Thread.sleep(2000);
 
 	}
 
