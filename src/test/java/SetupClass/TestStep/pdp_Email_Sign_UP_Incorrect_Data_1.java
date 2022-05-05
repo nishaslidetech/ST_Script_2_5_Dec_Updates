@@ -291,31 +291,36 @@ try {
 
 		Assert.assertTrue("Your are not Signout from application ", verifySignout.contentEquals("YOU ARE NOW LOGGED OUT"));*/
 		
-		WebElement My_Account = wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("My Account")));
-		js.executeScript("arguments[0].click();", My_Account);
-		//My_Account.click();
+		WebElement account = driver.findElement(By.xpath("//a[contains(.,'My Account')]"));
+			  Thread.sleep(3000);
+			account.click();
+		 Thread.sleep(8000);
+		 
+		
 
-		// handling the chat window here
-		Set.Chat_window_handle();
-
-		WebElement Delete_Account = wait
-				.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Delete Account']")));
-		Thread.sleep(1000);
-		Delete_Account.click();
-		WebElement radio_button = wait
-				.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@value='option1']")));
-		radio_button.click();
-		Thread.sleep(1000);
-		WebElement delete_Profile = wait.until(
-				ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='Delete Profile']")));
-		js.executeScript("arguments[0].scrollIntoView();", delete_Profile);
-		delete_Profile.click();
-		Thread.sleep(1000);
-		WebElement continue_delete = wait
-				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'No, delete my')]")));
-		js.executeScript("arguments[0].scrollIntoView();", continue_delete);
-		continue_delete.click();
-		Thread.sleep(2000);
+		 WebElement delete_account = driver.findElement(By.cssSelector("#clicking"));
+		js.executeScript("arguments[0].scrollIntoView();",delete_account);
+		 delete_account.click();
+		 Thread.sleep(3000);
+		WebElement delete_reason = driver.findElement(By.cssSelector("#exampleRadios1"));
+		Thread.sleep(3000);
+		delete_reason.click();
+		Thread.sleep(3000);
+		
+		 WebElement delete_profile = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#delete-final")));
+		js.executeScript("arguments[0].scrollIntoView();",delete_profile);
+		delete_profile.click();
+		 Thread.sleep(3000);
+		
+		WebElement delete_profile_coupon = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#flipModal > div > div > div.modal-footer.button_action > button.btn.btn-default.button_2")));
+		js.executeScript("arguments[0].scrollIntoView();",delete_profile_coupon);
+		delete_profile_coupon.click();
+		Thread.sleep(3000);
+		String verifyDeleteAccount = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@data-bind='html: $parent.prepareMessageForHtml(message.text)']"))).getText();
+		 Thread.sleep(3000);
+	         Assert.assertTrue("Account is not deleted", verifyDeleteAccount.contains("Your account has been deleted successfully."));
+	         System.out.println("your account delete successfully");
 
 	}
 
