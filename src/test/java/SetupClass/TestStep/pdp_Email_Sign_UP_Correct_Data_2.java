@@ -214,7 +214,7 @@ public class pdp_Email_Sign_UP_Correct_Data_2 extends Set {
 		//My_Account.click();
 
 		// handling the chat window here
-		Set.Chat_window_handle();
+		//Set.Chat_window_handle();
 
 		WebElement Delete_Account = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Delete Account']")));
