@@ -67,9 +67,9 @@ public class pdp_Email_Login_Correct_Data_Paid_User_8 extends Set {
 		WebElement login_btn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='Login']")));
 		Thread.sleep(2000);
 		login_btn.click();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		
-		driver.navigate().refresh();
+		//driver.navigate().refresh();
 	}
 
 	@Then("^user will be redirected to same pdp page viii$")
@@ -81,7 +81,7 @@ public class pdp_Email_Login_Correct_Data_Paid_User_8 extends Set {
 	public void user_download_the_product_viii() throws Throwable {
 	        driver.get("https://www.slideteam.net/puzzles-with-multiple-business-icons-flat-powerpoint-design.html");
 		WebElement download_btn_pdp_fp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='clicking']")));
-		js.executeScript("arguments[0].scrollIntoView();",download_btn_pdp_fp);	
+		//js.executeScript("arguments[0].scrollIntoView();",download_btn_pdp_fp);	
 		Thread.sleep(2000);
 		download_btn_pdp_fp.click();
 		Thread.sleep(2000);
