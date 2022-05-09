@@ -218,6 +218,12 @@ public class pdp_Email_Sign_UP_Incorrect_Data_1 extends Set {
 		js.executeScript("arguments[0].scrollIntoView();", down_load);
 		down_load.click();
 		Thread.sleep(3000);
+		if (!driver.findElements(By.xpath("//a[@class='mfp-close roundlink']")).isEmpty()) {
+			WebElement close_popup = wait
+					.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='mfp-close roundlink']")));
+
+			close_popup.click();
+
 	   //driver.get("https://www.slideteam.net/");
 	   //Thread.sleep(3000);
 		
