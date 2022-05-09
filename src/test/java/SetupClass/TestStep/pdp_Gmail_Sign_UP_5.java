@@ -115,7 +115,7 @@ public class pdp_Gmail_Sign_UP_5 extends Set{
 					.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='mfp-close roundlink']")));
 
 			close_popup.click();
-
+		}
 		Thread.sleep(5000);
 		driver.get("https://www.slideteam.net/");
 		Thread.sleep(4500);
