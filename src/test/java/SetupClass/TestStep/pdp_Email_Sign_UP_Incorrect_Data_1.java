@@ -227,6 +227,7 @@ public class pdp_Email_Sign_UP_Incorrect_Data_1 extends Set {
 	   //driver.get("https://www.slideteam.net/");
 	   //Thread.sleep(3000);
 		
+		}
 	}
 
 	@Then("^user delete the account i$")
