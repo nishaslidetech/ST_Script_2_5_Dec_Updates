@@ -98,7 +98,7 @@ public class pdp_Email_Login_Incorrect_Data_Paid_User_7 extends Set{
 		WebElement login_btn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//fieldset[@class='fieldset login']//button[@id='send2']")));
 		Thread.sleep(2000);
 		login_btn.click();
-		Thread.sleep(2000);
+		Thread.sleep(6000);
 		
 	}
 
@@ -106,7 +106,7 @@ public class pdp_Email_Login_Incorrect_Data_Paid_User_7 extends Set{
 	public void user_will_be_redirected_to_same_pdp_page_vii() throws Throwable {
 	  
 
-		driver.navigate().refresh();
+		//driver.navigate().refresh();
 		Thread.sleep(2000);
 	}
 
@@ -116,7 +116,7 @@ public class pdp_Email_Login_Incorrect_Data_Paid_User_7 extends Set{
 	       driver.get("https://www.slideteam.net/slides-for-a-startup-pitch-deck-powerpoint-presentation-slides.html");
 		   
 		WebElement download_btn_pdp_fp = wait.until(ExpectedConditions.elementToBeClickable(By.id("clicking")));
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		js.executeScript("arguments[0].scrollIntoView();",download_btn_pdp_fp);
 		download_btn_pdp_fp.click();
 		Thread.sleep(2000);
