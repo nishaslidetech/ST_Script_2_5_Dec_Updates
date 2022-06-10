@@ -45,7 +45,7 @@ public class pdp_Email_Sign_UP_Incorrect_Data_1 extends Set {
 	@Then("^user is redirected to sign up page i$")
 	public void user_is_redirected_to_sign_up_page_i() throws Throwable {
 	   
-	/*try
+	try
 	{
 		WebElement sign_up_page = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Sign up")));
 		Thread.sleep(2000);
@@ -56,15 +56,16 @@ public class pdp_Email_Sign_UP_Incorrect_Data_1 extends Set {
 		
 	catch (Exception e) {
 		// TODO: handle exception
-	}*/
+	}
 	
 	
 	}
 
 	@Then("^user enter incorrect details to sign up i$")
 	public void user_enter_incorrect_details_to_sign_up_i() throws Throwable {
-	    
-		Thread.sleep(2000);
+	    // PDP page login pop-up
+		
+	   /*Thread.sleep(2000);
 	    WebElement new_email_signup =  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@title= 'Email Address']")));
 	    Thread.sleep(1000);
 	    new_email_signup.sendKeys("123@$#!%@.$%q!");
@@ -89,7 +90,44 @@ public class pdp_Email_Sign_UP_Incorrect_Data_1 extends Set {
 	    Thread.sleep(1000);
 	    new_btn_signup.click();
 	    
-	    Thread.sleep(7000);
+	    Thread.sleep(7000);*/
+		
+	        Thread.sleep(2000);
+		WebElement new_email_signup = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='email_address']")));
+
+		new_email_signup.sendKeys("123@$#!%@.$%q!");
+		Thread.sleep(1000);
+
+		// enter name
+		WebElement new_fname_signup = wait.until(ExpectedConditions.elementToBeClickable(By.id("firstname")));
+		new_fname_signup.sendKeys("!$#");
+		Thread.sleep(1000);
+
+		WebElement new_lname_signup = wait.until(ExpectedConditions.elementToBeClickable(By.id("lastname")));
+		new_lname_signup.sendKeys("254204254");
+		Thread.sleep(1000);
+
+		// enter password
+		WebElement new_pwd_signup = wait.until(ExpectedConditions.elementToBeClickable(By.id("password")));
+		new_pwd_signup.sendKeys("123456");
+
+		// verify the password
+		WebElement new_pwd1_signup = wait
+				.until(ExpectedConditions.elementToBeClickable(By.id("password-confirmation")));
+		new_pwd1_signup.sendKeys("123456");
+
+		// enter captcha
+		WebElement new_captcha_signup = wait
+				.until(ExpectedConditions.elementToBeClickable(By.id("captcha_user_create")));
+		new_captcha_signup.sendKeys("Aj7W2mtf9namwf55");
+
+		// sign up button
+		WebElement new_btn_signup = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".submit")));
+
+		new_btn_signup.click();
+		Thread.sleep(1000);	
+		
 		
 	}
 
@@ -99,7 +137,7 @@ public class pdp_Email_Sign_UP_Incorrect_Data_1 extends Set {
 
 		log.info("ERROR MESSAGE IS DISPLAYED IN CONSOLE");
 
-		Thread.sleep(2000);
+	    /*Thread.sleep(2000);
 	    WebElement new_email_signup =  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@title= 'Email Address']")));
 	    Thread.sleep(1000);
 	    new_email_signup.clear();
@@ -124,7 +162,43 @@ public class pdp_Email_Sign_UP_Incorrect_Data_1 extends Set {
 	    Thread.sleep(1000);
 	    new_btn_signup.click();
 	    
-	    Thread.sleep(7000);
+	    Thread.sleep(7000);*/
+		
+		Thread.sleep(1000);
+		WebElement new_email_signup = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='email_address']")));
+
+		new_email_signup.clear();
+		Thread.sleep(1000);
+
+		// enter name
+		WebElement new_fname_signup = wait.until(ExpectedConditions.elementToBeClickable(By.id("firstname")));
+		new_fname_signup.clear();
+		Thread.sleep(1000);
+
+		WebElement new_lname_signup = wait.until(ExpectedConditions.elementToBeClickable(By.id("lastname")));
+		new_lname_signup.clear();
+		Thread.sleep(1000);
+
+		// enter password
+		WebElement new_pwd_signup = wait.until(ExpectedConditions.elementToBeClickable(By.id("password")));
+		new_pwd_signup.clear();
+
+		// verify the password
+		WebElement new_pwd1_signup = wait
+				.until(ExpectedConditions.elementToBeClickable(By.id("password-confirmation")));
+		new_pwd1_signup.clear();
+
+		// enter captcha
+		WebElement new_captcha_signup = wait
+				.until(ExpectedConditions.elementToBeClickable(By.id("captcha_user_create")));
+		new_captcha_signup.clear();
+
+		// sign up button
+		WebElement new_btn_signup = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".submit")));
+
+		new_btn_signup.click();
+		Thread.sleep(1000);
 	  
 	    
 	}
@@ -153,7 +227,7 @@ public class pdp_Email_Sign_UP_Incorrect_Data_1 extends Set {
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);	
 			
 		Thread.sleep(2000);
-		WebElement new_email_signup = wait
+		/*WebElement new_email_signup = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@title= 'Email Address']")));
 		Thread.sleep(2000);
 		new_email_signup.sendKeys(full_email);
@@ -186,7 +260,43 @@ public class pdp_Email_Sign_UP_Incorrect_Data_1 extends Set {
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@title= 'Sign UP']")));
 		Thread.sleep(2000);
 		new_btn_signup.click();
-		Thread.sleep(3000);
+		Thread.sleep(3000);*/
+		
+		Thread.sleep(1000);
+		WebElement new_email_signup = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='email_address']")));
+
+		new_email_signup.sendKeys(full_email);
+		Thread.sleep(1000);
+
+		// enter name
+		WebElement new_fname_signup = wait.until(ExpectedConditions.elementToBeClickable(By.id("firstname")));
+		new_fname_signup.sendKeys("Selenium");
+		Thread.sleep(1000);
+
+		WebElement new_lname_signup = wait.until(ExpectedConditions.elementToBeClickable(By.id("lastname")));
+		new_lname_signup.sendKeys("Testing");
+		Thread.sleep(1000);
+
+		// enter password
+		WebElement new_pwd_signup = wait.until(ExpectedConditions.elementToBeClickable(By.id("password")));
+		new_pwd_signup.sendKeys("selenium@123");
+
+		// verify the password
+		WebElement new_pwd1_signup = wait
+				.until(ExpectedConditions.elementToBeClickable(By.id("password-confirmation")));
+		new_pwd1_signup.sendKeys("selenium@123");
+
+		// enter captcha
+		WebElement new_captcha_signup = wait
+				.until(ExpectedConditions.elementToBeClickable(By.id("captcha_user_create")));
+		new_captcha_signup.sendKeys("Aj7W2mtf9namwf55");
+
+		// sign up button
+		WebElement new_btn_signup = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".submit")));
+
+		new_btn_signup.click();
+		Thread.sleep(1000);
 		
 	}
 
